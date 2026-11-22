@@ -7,208 +7,263 @@
 <title>For My Lawania ❤️</title>
 
 <style>
-* { box-sizing:border-box; }
-
-body {
- margin:0;
- font-family:Georgia,serif;
- background:linear-gradient(145deg,#170d20,#48172f,#160e24);
- color:white;
- text-align:center;
- min-height:100vh;
- overflow-x:hidden;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-section {
- min-height:100vh;
- padding:65px 20px;
- display:flex;
- flex-direction:column;
- align-items:center;
- justify-content:center;
+body {
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg,#2b1025,#702b50,#e69ab5);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.heart {
+  font-size: 65px;
+  animation: beat 1.2s infinite;
 }
 
 h1 {
- color:#ffb5d0;
- font-size:38px;
- text-shadow:0 0 20px #ff4e91;
+  color: #ffd5e5;
+  font-size: clamp(32px,8vw,52px);
+  margin: 20px 0;
 }
 
-h2 { color:#ffc0d8; }
-
-p {
- line-height:1.8;
- font-size:17px;
+.hero p {
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 450px;
 }
 
 button {
- border:1px solid #ffb4d0;
- background:#e94d8b;
- color:white;
- border-radius:30px;
- padding:14px 25px;
- font-size:16px;
- margin:12px;
- cursor:pointer;
- box-shadow:0 0 18px #ed5797;
+  border: none;
+  background: #ffb6cf;
+  color: #571d3d;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  margin-top: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 5px 20px #0004;
 }
 
-button:active { transform:scale(.95); }
-
-.hidden { display:none !important; }
-
-.heart {
- position:fixed;
- bottom:-30px;
- animation:float 7s linear infinite;
- pointer-events:none;
- z-index:0;
+button:active {
+  transform: scale(.96);
 }
 
-@keyframes float {
- to { transform:translateY(-110vh) rotate(360deg); opacity:0; }
+.section {
+  padding: 65px 16px;
 }
 
-.card {
- background:#ffffff12;
- border:1px solid #ffb5d055;
- border-radius:22px;
- padding:25px;
- max-width:450px;
- width:100%;
- margin:15px auto;
- box-shadow:0 0 25px #ff5a9933;
+.section h2 {
+  color: #ffd5e5;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  margin-bottom: 35px;
+  color: #ffe1eb;
+  line-height: 1.7;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+  max-width: 850px;
+  margin: auto;
 }
 
 .photo {
- width:100%;
- max-height:330px;
- object-fit:cover;
- border-radius:15px;
- margin-top:15px;
+  background: #fff7f9;
+  padding: 9px 9px 17px;
+  border-radius: 5px;
+  color: #75334e;
+  box-shadow: 0 8px 22px #0004;
+  transform: rotate(-2deg);
+  transition: .3s;
 }
 
-#gallery {
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:12px;
- width:100%;
- max-width:450px;
+.photo:nth-child(even) {
+  transform: rotate(2deg);
 }
 
-#gallery img {
- width:100%;
- height:180px;
- object-fit:cover;
- border-radius:15px;
+.photo:hover {
+  transform: rotate(0deg) scale(1.03);
 }
 
-input { margin:15px; max-width:90%; }
+.photo img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  background: #ead5df;
+}
 
-.small { color:#ffb8d1; font-size:13px; }
+.photo p {
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.message {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px 22px;
+  border: 1px solid #ffc6dc;
+  border-radius: 20px;
+  background: #ffffff12;
+  line-height: 2;
+  font-size: 17px;
+}
+
+footer {
+  padding: 35px 15px;
+  color: #ffd5e5;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.2); }
+}
+
+@media(max-width:400px) {
+  .photo img {
+    height: 150px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<section id="home">
- <div style="font-size:65px">🌷</div>
- <h1>For My Lawania</h1>
- <h2>Happy Birthday ❤️</h2>
- <p>25 November</p>
- <div class="card">
-  <p>A little surprise has been made especially for you...</p>
-  <button onclick="openSurprise()">Open Your Surprise 💌</button>
- </div>
- <p class="small">Made with love ❤️</p>
-</section>
+<section class="hero">
+  <div class="heart">❤️</div>
+  <h1>Happy Birthday Lawania!</h1>
 
-<section id="message" class="hidden">
- <div style="font-size:60px">💗</div>
- <h1>My Special Person</h1>
- <div class="card">
   <p>
-   Dear Lawania,<br><br>
-   Today is your special day, and I just want you to know how precious you are.
-   You bring happiness into my world in your own beautiful way.
-   <br><br>
-   I hope your life is always filled with happiness, beautiful memories and endless reasons to smile.
-   <br><br>
-   Happy Birthday! ❤️
+    To someone who makes life a little more beautiful.
+    Today is all about you and the memories we share.
   </p>
- </div>
- <button onclick="showPage('memories')">Our Memories 📸</button>
+
+  <button onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">
+    Open Your Surprise 💗
+  </button>
 </section>
 
-<section id="memories" class="hidden">
- <h1>Our Beautiful Memories 📸</h1>
- <div class="card">
-  <p>Choose your favourite pictures to add to our gallery.</p>
-  <input type="file" id="photos" accept="image/*" multiple>
-  <div id="gallery"></div>
- </div>
- <button onclick="showPage('letter')">One Last Surprise 💌</button>
-</section>
-
-<section id="letter" class="hidden">
- <div style="font-size:60px">💌</div>
- <h1>A Letter For You</h1>
- <div class="card">
-  <h2>Dear Lawania 🌷</h2>
-  <p>
-   I may not have the perfect words,
-   but I hope you always remember
-   how special you are.
-   <br><br>
-   Thank you for being a beautiful part of my story.
-   May every new year of your life bring you more happiness.
-   <br><br>
-   Stay happy, stay blessed and keep smiling.
-   <br><br>
-   Happy Birthday, Lawania! ❤️
+<section class="section" id="memories">
+  <h2>Our Little Memories 🌷</h2>
+  <p class="subtitle">
+    Every picture holds a beautiful memory.
+    Here are 11 little pieces of happiness.
   </p>
-  <h2>Forever Special ❤️</h2>
-  <div style="font-size:40px">🌹💗🌹</div>
- </div>
- <button onclick="showPage('home')">Replay Surprise ↻</button>
+
+  <div class="gallery">
+
+    <div class="photo">
+      <img src="Snapchat-1015828381.jpg" alt="Memory 1">
+      <p>A beautiful memory ❤️</p>
+    </div>
+
+    <div class="photo">
+      <img src="Snapchat-1097512383.jpg" alt="Memory 2">
+      <p>One of my favourites 🌸</p>
+    </div>
+
+    <div class="photo">
+      <img src="Snapchat-1098653693.jpg" alt="Memory 3">
+      <p>Forever special 💗</p>
+    </div>
+
+    <div class="photo">
+      <img src="Snapchat-1204422887.jpg" alt="Memory 4">
+      <p>A moment to remember ✨</p>
+    </div>
+
+    <div class="photo">
+      <img src="Snapchat-1321616183.jpg" alt="Memory 5">
+      <p>Little moments, big feelings ❤️</p>
+    </div>
+
+    <div class="photo">
+      <img src="Snapchat-1392645630.jpg" alt="Memory 6">
+      <p>My favourite memories 🌷</p>
+    </div>
+
+    <div class="photo">
+      <img src="Snapchat-1410183377.jpg" alt="Memory 7">
+      <p>Always worth remembering 💕</p>
+    </div>
+
+    <div class="photo">
+      <img src="Snapchat-1531613918.jpg" alt="Memory 8">
+      <p>A little piece of happiness 💖</p>
+    </div>
+
+    <div class="photo">
+      <img src="Snapchat-76443071.jpg" alt="Memory 9">
+      <p>Special moments ✨</p>
+    </div>
+
+    <div class="photo">
+      <img src="Snapchat-845155939.jpg" alt="Memory 10">
+      <p>Made with love ❤️</p>
+    </div>
+
+    <div class="photo">
+      <img src="Snapchat-958478409.jpg" alt="Memory 11">
+      <p>One more beautiful memory 🌹</p>
+    </div>
+
+  </div>
 </section>
 
-<script>
-function openSurprise() {
- showPage('message');
-}
+<section class="section">
+  <h2>A Little Message For You 💌</h2>
 
-function showPage(id) {
- document.querySelectorAll('section').forEach(s=>{
-  s.classList.add('hidden');
- });
- document.getElementById(id).classList.remove('hidden');
- window.scrollTo(0,0);
-}
+  <div class="message">
+    Happy Birthday, Lawania! ❤️
 
-document.getElementById('photos').addEventListener('change',function(e){
- const gallery=document.getElementById('gallery');
- Array.from(e.target.files).forEach(file=>{
-  const reader=new FileReader();
-  reader.onload=function(event){
-   const img=document.createElement('img');
-   img.src=event.target.result;
-   gallery.appendChild(img);
-  };
-  reader.readAsDataURL(file);
- });
-});
+    <br><br>
 
-setInterval(()=>{
- const heart=document.createElement('div');
- heart.className='heart';
- heart.innerHTML=['❤️','💗','🌸','💕'][Math.floor(Math.random()*4)];
- heart.style.left=Math.random()*100+'vw';
- heart.style.fontSize=(15+Math.random()*20)+'px';
- document.body.appendChild(heart);
- setTimeout(()=>heart.remove(),7000);
-},650);
-</script>
+    I hope your life is always filled with happiness,
+    beautiful moments and endless reasons to smile.
+
+    <br><br>
+
+    You deserve all the beautiful things this world
+    has to offer.
+
+    <br><br>
+
+    Stay happy, stay blessed and keep shining.
+    You are special! 🌷
+
+    <br><br>
+
+    With lots of love ❤️
+  </div>
+</section>
+
+<footer>
+  Made with ❤️ Just for Lawania
+
+  <br><br>
+
+  Forever a beautiful memory 🌸
+</footer>
 
 </body>
 </html>
