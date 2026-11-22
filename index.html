@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Lawania ❤️</title>
+
+<style>
+* { box-sizing:border-box; }
+
+body {
+ margin:0;
+ font-family:Georgia,serif;
+ background:linear-gradient(145deg,#170d20,#48172f,#160e24);
+ color:white;
+ text-align:center;
+ min-height:100vh;
+ overflow-x:hidden;
+}
+
+section {
+ min-height:100vh;
+ padding:65px 20px;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+}
+
+h1 {
+ color:#ffb5d0;
+ font-size:38px;
+ text-shadow:0 0 20px #ff4e91;
+}
+
+h2 { color:#ffc0d8; }
+
+p {
+ line-height:1.8;
+ font-size:17px;
+}
+
+button {
+ border:1px solid #ffb4d0;
+ background:#e94d8b;
+ color:white;
+ border-radius:30px;
+ padding:14px 25px;
+ font-size:16px;
+ margin:12px;
+ cursor:pointer;
+ box-shadow:0 0 18px #ed5797;
+}
+
+button:active { transform:scale(.95); }
+
+.hidden { display:none !important; }
+
+.heart {
+ position:fixed;
+ bottom:-30px;
+ animation:float 7s linear infinite;
+ pointer-events:none;
+ z-index:0;
+}
+
+@keyframes float {
+ to { transform:translateY(-110vh) rotate(360deg); opacity:0; }
+}
+
+.card {
+ background:#ffffff12;
+ border:1px solid #ffb5d055;
+ border-radius:22px;
+ padding:25px;
+ max-width:450px;
+ width:100%;
+ margin:15px auto;
+ box-shadow:0 0 25px #ff5a9933;
+}
+
+.photo {
+ width:100%;
+ max-height:330px;
+ object-fit:cover;
+ border-radius:15px;
+ margin-top:15px;
+}
+
+#gallery {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
+ width:100%;
+ max-width:450px;
+}
+
+#gallery img {
+ width:100%;
+ height:180px;
+ object-fit:cover;
+ border-radius:15px;
+}
+
+input { margin:15px; max-width:90%; }
+
+.small { color:#ffb8d1; font-size:13px; }
+</style>
+</head>
+
+<body>
+
+<section id="home">
+ <div style="font-size:65px">🌷</div>
+ <h1>For My Lawania</h1>
+ <h2>Happy Birthday ❤️</h2>
+ <p>25 November</p>
+ <div class="card">
+  <p>A little surprise has been made especially for you...</p>
+  <button onclick="openSurprise()">Open Your Surprise 💌</button>
+ </div>
+ <p class="small">Made with love ❤️</p>
+</section>
+
+<section id="message" class="hidden">
+ <div style="font-size:60px">💗</div>
+ <h1>My Special Person</h1>
+ <div class="card">
+  <p>
+   Dear Lawania,<br><br>
+   Today is your special day, and I just want you to know how precious you are.
+   You bring happiness into my world in your own beautiful way.
+   <br><br>
+   I hope your life is always filled with happiness, beautiful memories and endless reasons to smile.
+   <br><br>
+   Happy Birthday! ❤️
+  </p>
+ </div>
+ <button onclick="showPage('memories')">Our Memories 📸</button>
+</section>
+
+<section id="memories" class="hidden">
+ <h1>Our Beautiful Memories 📸</h1>
+ <div class="card">
+  <p>Choose your favourite pictures to add to our gallery.</p>
+  <input type="file" id="photos" accept="image/*" multiple>
+  <div id="gallery"></div>
+ </div>
+ <button onclick="showPage('letter')">One Last Surprise 💌</button>
+</section>
+
+<section id="letter" class="hidden">
+ <div style="font-size:60px">💌</div>
+ <h1>A Letter For You</h1>
+ <div class="card">
+  <h2>Dear Lawania 🌷</h2>
+  <p>
+   I may not have the perfect words,
+   but I hope you always remember
+   how special you are.
+   <br><br>
+   Thank you for being a beautiful part of my story.
+   May every new year of your life bring you more happiness.
+   <br><br>
+   Stay happy, stay blessed and keep smiling.
+   <br><br>
+   Happy Birthday, Lawania! ❤️
+  </p>
+  <h2>Forever Special ❤️</h2>
+  <div style="font-size:40px">🌹💗🌹</div>
+ </div>
+ <button onclick="showPage('home')">Replay Surprise ↻</button>
+</section>
+
+<script>
+function openSurprise() {
+ showPage('message');
+}
+
+function showPage(id) {
+ document.querySelectorAll('section').forEach(s=>{
+  s.classList.add('hidden');
+ });
+ document.getElementById(id).classList.remove('hidden');
+ window.scrollTo(0,0);
+}
+
+document.getElementById('photos').addEventListener('change',function(e){
+ const gallery=document.getElementById('gallery');
+ Array.from(e.target.files).forEach(file=>{
+  const reader=new FileReader();
+  reader.onload=function(event){
+   const img=document.createElement('img');
+   img.src=event.target.result;
+   gallery.appendChild(img);
+  };
+  reader.readAsDataURL(file);
+ });
+});
+
+setInterval(()=>{
+ const heart=document.createElement('div');
+ heart.className='heart';
+ heart.innerHTML=['❤️','💗','🌸','💕'][Math.floor(Math.random()*4)];
+ heart.style.left=Math.random()*100+'vw';
+ heart.style.fontSize=(15+Math.random()*20)+'px';
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),7000);
+},650);
+</script>
+
+</body>
+</html>
