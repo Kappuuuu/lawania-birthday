@@ -4,266 +4,790 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Lawania ❤️</title>
+<title>25 November | Happy Birthday Wifey ❤️</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+background:#100719;
+color:white;
+font-family:Georgia,serif;
+overflow-x:hidden;
 }
 
-body {
-  font-family: Georgia, serif;
-  background: linear-gradient(135deg,#2b1025,#702b50,#e69ab5);
-  color: white;
-  text-align: center;
-  overflow-x: hidden;
+:root{
+--pink:#ff8fbc;
+--light:#ffd6e7;
+--purple:#a66bff;
 }
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 20px;
+#stars{
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:0;
+background-image:
+radial-gradient(white 1px,transparent 1px),
+radial-gradient(#ffacd5 1px,transparent 1px);
+background-size:65px 65px,100px 100px;
+background-position:0 0,30px 40px;
+animation:stars 20s linear infinite;
+opacity:.4;
 }
 
-.heart {
-  font-size: 65px;
-  animation: beat 1.2s infinite;
+@keyframes stars{
+to{background-position:200px 300px,-100px 200px}
 }
 
-h1 {
-  color: #ffd5e5;
-  font-size: clamp(32px,8vw,52px);
-  margin: 20px 0;
+nav{
+position:fixed;
+top:12px;
+left:50%;
+transform:translateX(-50%);
+z-index:20;
+background:#ffffff18;
+backdrop-filter:blur(15px);
+border:1px solid #ffffff30;
+padding:12px 20px;
+border-radius:30px;
+font-size:12px;
+letter-spacing:2px;
+color:#ffd5e6;
+white-space:nowrap;
 }
 
-.hero p {
-  font-size: 17px;
-  line-height: 1.8;
-  max-width: 450px;
+section{
+min-height:100vh;
+padding:100px 20px 65px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+z-index:1;
+overflow:hidden;
 }
 
-button {
-  border: none;
-  background: #ffb6cf;
-  color: #571d3d;
-  padding: 14px 28px;
-  border-radius: 30px;
-  font-size: 16px;
-  margin-top: 30px;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 0 5px 20px #0004;
+h1{
+font-size:clamp(38px,9vw,65px);
+color:var(--light);
+text-shadow:0 0 25px #ff4c9b;
+line-height:1.25;
 }
 
-button:active {
-  transform: scale(.96);
+h2{
+font-size:clamp(28px,7vw,40px);
+color:var(--pink);
+margin-bottom:25px;
+text-shadow:0 0 15px #ff4b91;
 }
 
-.section {
-  padding: 65px 16px;
+p{
+color:#fbd8e8;
+line-height:2;
+font-size:16px;
+max-width:600px;
 }
 
-.section h2 {
-  color: #ffd5e5;
-  font-size: 30px;
-  margin-bottom: 15px;
+.small{
+color:#ffafd0;
+letter-spacing:4px;
+font-size:11px;
+margin-bottom:20px;
 }
 
-.subtitle {
-  margin-bottom: 35px;
-  color: #ffe1eb;
-  line-height: 1.7;
+.btn{
+border:none;
+background:linear-gradient(45deg,#ed3d88,#a45bff);
+color:white;
+padding:15px 28px;
+border-radius:35px;
+font-size:15px;
+margin:20px 8px;
+cursor:pointer;
+box-shadow:0 0 25px #ff4b9b66;
+transition:.3s;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 18px;
-  max-width: 850px;
-  margin: auto;
+.btn:active{transform:scale(.94)}
+
+.glow{
+animation:glow 2s infinite alternate;
 }
 
-.photo {
-  background: #fff7f9;
-  padding: 9px 9px 17px;
-  border-radius: 5px;
-  color: #75334e;
-  box-shadow: 0 8px 22px #0004;
-  transform: rotate(-2deg);
-  transition: .3s;
+@keyframes glow{
+to{text-shadow:0 0 35px #ff4b9b,0 0 65px #a45bff}
 }
 
-.photo:nth-child(even) {
-  transform: rotate(2deg);
+.heart{
+font-size:65px;
+animation:beat 1s infinite;
+filter:drop-shadow(0 0 15px #ff4b91);
+margin:20px;
 }
 
-.photo:hover {
-  transform: rotate(0deg) scale(1.03);
+@keyframes beat{
+50%{transform:scale(1.3)}
 }
 
-.photo img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  display: block;
-  background: #ead5df;
+/* ANIME COUPLE */
+
+.couple{
+display:flex;
+justify-content:center;
+align-items:end;
+gap:10px;
+margin:35px auto;
+height:180px;
 }
 
-.photo p {
-  font-size: 14px;
-  margin-top: 12px;
+.person{
+position:relative;
+width:105px;
+animation:float 2s infinite ease-in-out;
 }
 
-.message {
-  max-width: 600px;
-  margin: auto;
-  padding: 30px 22px;
-  border: 1px solid #ffc6dc;
-  border-radius: 20px;
-  background: #ffffff12;
-  line-height: 2;
-  font-size: 17px;
+.person:nth-child(2){animation-delay:.6s}
+
+@keyframes float{
+50%{transform:translateY(-17px)}
 }
 
-footer {
-  padding: 35px 15px;
-  color: #ffd5e5;
+.face{
+width:78px;
+height:80px;
+background:#ffd1bd;
+border-radius:45%;
+margin:auto;
+position:relative;
+border:2px solid #fff6;
 }
 
-@keyframes beat {
-  50% { transform: scale(1.2); }
+.hair{
+position:absolute;
+width:84px;
+height:42px;
+background:#352039;
+top:-8px;
+left:-5px;
+border-radius:50% 50% 20% 20%;
 }
 
-@media(max-width:400px) {
-  .photo img {
-    height: 150px;
-  }
+.girl .hair{background:#9d2867;height:48px}
+
+.eye{
+position:absolute;
+width:8px;
+height:13px;
+background:#39233b;
+border-radius:50%;
+top:38px;
+left:18px;
+}
+
+.eye.two{left:50px}
+
+.smile{
+position:absolute;
+width:16px;
+height:8px;
+border-bottom:2px solid #bd4b65;
+border-radius:50%;
+top:59px;
+left:31px;
+}
+
+.clothes{
+width:83px;
+height:65px;
+border-radius:25px 25px 8px 8px;
+background:#536cc4;
+margin:-2px auto;
+}
+
+.girl .clothes{background:#ed609d}
+
+.anime-text{
+color:#ffacd0;
+margin-top:10px;
+}
+
+/* CARDS */
+
+.card{
+width:min(100%,570px);
+background:linear-gradient(145deg,#ffffff15,#ffffff06);
+border:1px solid #ff9fc855;
+border-radius:25px;
+padding:28px 22px;
+box-shadow:0 0 35px #ff4b9120;
+backdrop-filter:blur(8px);
+}
+
+.number{
+font-size:45px;
+color:#ff9fc9;
+margin-bottom:12px;
+}
+
+.chapter{
+font-size:12px;
+color:#ffb6d5;
+letter-spacing:4px;
+margin-bottom:12px;
+}
+
+/* PHOTO GALLERY */
+
+.gallery{
+width:min(100%,700px);
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:14px;
+}
+
+.gallery img{
+width:100%;
+height:210px;
+object-fit:cover;
+border-radius:18px;
+border:2px solid #ff9fc9;
+box-shadow:0 0 18px #ff5c9c44;
+transition:.4s;
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.05) rotate(2deg);
+box-shadow:0 0 30px #ff5c9c;
+}
+
+#viewer{
+display:none;
+position:fixed;
+inset:0;
+z-index:100;
+background:#000e;
+align-items:center;
+justify-content:center;
+padding:15px;
+}
+
+#viewer img{
+max-width:95%;
+max-height:85vh;
+border-radius:20px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:25px;
+font-size:35px;
+}
+
+/* FALLING EFFECTS */
+
+.fall{
+position:fixed;
+top:-40px;
+z-index:50;
+pointer-events:none;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(650deg);
+opacity:0;
+}
+}
+
+.bubble{
+position:fixed;
+bottom:-40px;
+z-index:2;
+pointer-events:none;
+animation:rise 7s linear forwards;
+}
+
+@keyframes rise{
+to{
+transform:translateY(-110vh) translateX(50px);
+opacity:0;
+}
+}
+
+/* SHOOTING STARS */
+
+.shooting{
+position:fixed;
+width:100px;
+height:2px;
+background:linear-gradient(90deg,white,transparent);
+transform:rotate(-35deg);
+animation:shoot 2s linear forwards;
+z-index:3;
+pointer-events:none;
+}
+
+@keyframes shoot{
+from{transform:translate(0,0) rotate(-35deg);opacity:1}
+to{transform:translate(-400px,400px) rotate(-35deg);opacity:0}
+}
+
+/* PROMISES */
+
+.promise{
+padding:15px;
+margin:10px 0;
+border:1px solid #ff9fc855;
+border-radius:15px;
+color:#ffe0ed;
+background:#ffffff0c;
+}
+
+/* PROGRESS */
+
+.progress{
+position:fixed;
+top:0;
+left:0;
+height:3px;
+width:0;
+background:#ff7eb5;
+z-index:30;
+box-shadow:0 0 10px #ff7eb5;
+}
+
+/* FINAL */
+
+.final-heart{
+font-size:100px;
+animation:beat 1s infinite;
+}
+
+footer{
+padding:30px;
+text-align:center;
+color:#ffafd0;
+position:relative;
+z-index:1;
+}
+
+@media(max-width:380px){
+.gallery img{height:165px}
+p{font-size:15px}
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
-  <div class="heart">❤️</div>
-  <h1>Happy Birthday Lawania!</h1>
+<div id="stars"></div>
+<div class="progress" id="progress"></div>
 
-  <p>
-    To someone who makes life a little more beautiful.
-    Today is all about you and the memories we share.
-  </p>
+<nav>♡ MY WIFEY'S UNIVERSE ♡</nav>
 
-  <button onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">
-    Open Your Surprise 💗
-  </button>
+<!-- CHAPTER 1 -->
+
+<section>
+<div class="small">A SPECIAL WORLD CREATED FOR YOU</div>
+<div class="heart">💗</div>
+<h1 class="glow">Welcome To<br>Her Universe</h1>
+<p>
+Some people make the world beautiful.
+And then there is someone who becomes the whole universe. ✨
+</p>
+<button class="btn" onclick="go(2)">Enter Our Story 💌</button>
 </section>
 
-<section class="section" id="memories">
-  <h2>Our Little Memories 🌷</h2>
-  <p class="subtitle">
-    Every picture holds a beautiful memory.
-    Here are 11 little pieces of happiness.
-  </p>
+<!-- CHAPTER 2 -->
 
-  <div class="gallery">
-
-    <div class="photo">
-      <img src="Snapchat-1015828381.jpg" alt="Memory 1">
-      <p>A beautiful memory ❤️</p>
-    </div>
-
-    <div class="photo">
-      <img src="Snapchat-1097512383.jpg" alt="Memory 2">
-      <p>One of my favourites 🌸</p>
-    </div>
-
-    <div class="photo">
-      <img src="Snapchat-1098653693.jpg" alt="Memory 3">
-      <p>Forever special 💗</p>
-    </div>
-
-    <div class="photo">
-      <img src="Snapchat-1204422887.jpg" alt="Memory 4">
-      <p>A moment to remember ✨</p>
-    </div>
-
-    <div class="photo">
-      <img src="Snapchat-1321616183.jpg" alt="Memory 5">
-      <p>Little moments, big feelings ❤️</p>
-    </div>
-
-    <div class="photo">
-      <img src="Snapchat-1392645630.jpg" alt="Memory 6">
-      <p>My favourite memories 🌷</p>
-    </div>
-
-    <div class="photo">
-      <img src="Snapchat-1410183377.jpg" alt="Memory 7">
-      <p>Always worth remembering 💕</p>
-    </div>
-
-    <div class="photo">
-      <img src="Snapchat-1531613918.jpg" alt="Memory 8">
-      <p>A little piece of happiness 💖</p>
-    </div>
-
-    <div class="photo">
-      <img src="Snapchat-76443071.jpg" alt="Memory 9">
-      <p>Special moments ✨</p>
-    </div>
-
-    <div class="photo">
-      <img src="Snapchat-845155939.jpg" alt="Memory 10">
-      <p>Made with love ❤️</p>
-    </div>
-
-    <div class="photo">
-      <img src="Snapchat-958478409.jpg" alt="Memory 11">
-      <p>One more beautiful memory 🌹</p>
-    </div>
-
-  </div>
+<section>
+<div class="chapter">CHAPTER 02</div>
+<div class="small">25 NOVEMBER</div>
+<h1>Happy Birthday<br>My Wifey! 🎂</h1>
+<div class="heart">🎀</div>
+<div class="card">
+<h2>25 November 🌹</h2>
+<p>
+Today is not just another day.
+Today is the birthday of someone truly special.
+May your life always shine with happiness.
+</p>
+</div>
+<button class="btn" onclick="go(3)">Next Surprise ❤️</button>
 </section>
 
-<section class="section">
-  <h2>A Little Message For You 💌</h2>
+<!-- CHAPTER 3 -->
 
-  <div class="message">
-    Happy Birthday, Lawania! ❤️
+<section>
+<div class="chapter">CHAPTER 03</div>
+<h2>Our Anime Love Story</h2>
+<div class="couple">
+<div class="person">
+<div class="face">
+<div class="hair"></div>
+<div class="eye"></div><div class="eye two"></div>
+<div class="smile"></div>
+</div>
+<div class="clothes"></div>
+</div>
+<div class="person girl">
+<div class="face">
+<div class="hair"></div>
+<div class="eye"></div><div class="eye two"></div>
+<div class="smile"></div>
+</div>
+<div class="clothes"></div>
+</div>
+</div>
+<p>
+Two different souls, one beautiful story.
+A little magic, a little madness and endless memories. 💕
+</p>
+<button class="btn" onclick="go(4)">Continue 🌸</button>
+</section>
 
-    <br><br>
+<!-- CHAPTER 4 -->
 
-    I hope your life is always filled with happiness,
-    beautiful moments and endless reasons to smile.
+<section>
+<div class="chapter">CHAPTER 04</div>
+<h2>Cherry Blossom Garden 🌸</h2>
+<div class="heart">🌸</div>
+<div class="card">
+<p>
+Imagine a beautiful garden,
+pink flowers falling from the sky,
+soft music in the background
+and a magical world full of dreams.
+</p>
+<p style="margin-top:15px">
+May every season of your life be as beautiful as spring. 🦋
+</p>
+</div>
+</section>
 
-    <br><br>
+<!-- CHAPTER 5 -->
 
-    You deserve all the beautiful things this world
-    has to offer.
+<section>
+<div class="chapter">CHAPTER 05</div>
+<h2>A Thousand Reasons 💗</h2>
+<div class="card">
+<div class="number">∞</div>
+<p>
+Your smile.
+Your kindness.
+Your little habits.
+Your beautiful heart.
+Your way of making ordinary moments special.
+</p>
+<p style="margin-top:15px">
+Some things are simply too beautiful for words. ❤️
+</p>
+</div>
+</section>
 
-    <br><br>
+<!-- CHAPTER 6 -->
 
-    Stay happy, stay blessed and keep shining.
-    You are special! 🌷
+<section>
+<div class="chapter">CHAPTER 06</div>
+<h2>Our Beautiful Memories 📸</h2>
+<p style="margin-bottom:25px">
+Eleven little windows into beautiful memories.
+</p>
+<div class="gallery">
+<img src="Snapchat-1015828381.jpg" onclick="show(this)">
+<img src="Snapchat-1097512383.jpg" onclick="show(this)">
+<img src="Snapchat-1098653693.jpg" onclick="show(this)">
+<img src="Snapchat-1204422887.jpg" onclick="show(this)">
+<img src="Snapchat-132161883.jpg" onclick="show(this)">
+<img src="Snapchat-1392645630.jpg" onclick="show(this)">
+<img src="Snapchat-1410183377.jpg" onclick="show(this)">
+<img src="Snapchat-1531613918.jpg" onclick="show(this)">
+<img src="Snapchat-76443071.jpg" onclick="show(this)">
+<img src="Snapchat-845155939.jpg" onclick="show(this)">
+<img src="Snapchat-958478409.jpg" onclick="show(this)">
+</div>
+</section>
 
-    <br><br>
+<div id="viewer" onclick="hide()">
+<span class="close">×</span>
+<img id="largeImage">
+</div>
 
-    With lots of love ❤️
-  </div>
+<!-- CHAPTER 7 -->
+
+<section>
+<div class="chapter">CHAPTER 07</div>
+<h2>A Letter From Kappu 💌</h2>
+<div class="card">
+<p>
+My Dearest Wifey ❤️
+<br><br>
+On your special day, I wish you happiness that never ends,
+dreams that come true and countless reasons to smile.
+<br><br>
+You deserve beautiful moments, endless success
+and all the wonderful things life has to offer.
+<br><br>
+May every new chapter of your life be filled with magic.
+<br><br>
+With lots of love,
+<br><br>
+<strong>From Your Hubby Kappu ❤️</strong>
+</p>
+</div>
+</section>
+
+<!-- CHAPTER 8 -->
+
+<section>
+<div class="chapter">CHAPTER 08</div>
+<h2>The Magical Love Garden 🦋</h2>
+<div class="heart">🦋</div>
+<p>
+A sky full of stars.
+A garden full of flowers.
+A world full of beautiful possibilities.
+</p>
+<p style="margin-top:20px">
+May your dreams always have wings. ✨
+</p>
+</section>
+
+<!-- CHAPTER 9 -->
+
+<section>
+<div class="chapter">CHAPTER 09</div>
+<h2>Under The Same Moon 🌙</h2>
+<div style="font-size:100px;animation:float 3s infinite">🌙</div>
+<div class="card">
+<p>
+No matter how far the stars seem,
+the moon always reminds us
+that beautiful things can shine even in darkness.
+</p>
+<p style="margin-top:15px">
+May your nights be peaceful
+and your mornings full of hope. 💗
+</p>
+</div>
+</section>
+
+<!-- CHAPTER 10 -->
+
+<section>
+<div class="chapter">CHAPTER 10</div>
+<h2>10 Beautiful Promises 💞</h2>
+<div class="card">
+<div class="promise">01 — Always respect your dreams.</div>
+<div class="promise">02 — Celebrate your happiness.</div>
+<div class="promise">03 — Support your ambitions.</div>
+<div class="promise">04 — Listen with patience.</div>
+<div class="promise">05 — Appreciate the little things.</div>
+<div class="promise">06 — Keep creating beautiful memories.</div>
+<div class="promise">07 — Encourage you to shine.</div>
+<div class="promise">08 — Never stop learning together.</div>
+<div class="promise">09 — Choose kindness every day.</div>
+<div class="promise">10 — Keep our story beautiful.</div>
+</div>
+</section>
+
+<!-- CHAPTER 11 -->
+
+<section>
+<div class="chapter">CHAPTER 11</div>
+<h2>Things To Celebrate About You 🎀</h2>
+<div class="heart">🌷</div>
+<div class="card">
+<p>
+Your unique personality.
+<br><br>
+Your dreams and ambitions.
+<br><br>
+Your little moments of happiness.
+<br><br>
+Your strength and kindness.
+<br><br>
+And everything that makes you wonderfully YOU. ❤️
+</p>
+</div>
+</section>
+
+<!-- CHAPTER 12 -->
+
+<section>
+<div class="chapter">CHAPTER 12</div>
+<h2>Birthday Wishes 🎆</h2>
+<div style="font-size:75px;animation:beat 1s infinite">🎂</div>
+<div class="card">
+<p>
+May happiness find you everywhere.
+<br><br>
+May your dreams become reality.
+<br><br>
+May success follow your hard work.
+<br><br>
+May your heart always find reasons to smile.
+<br><br>
+And may this year bring you unforgettable memories. 🌹
+</p>
+</div>
+</section>
+
+<!-- CHAPTER 13 -->
+
+<section>
+<div class="chapter">CHAPTER 13</div>
+<h2>Our Little Dream World 🧸</h2>
+<div style="font-size:85px">🏡🌷</div>
+<div class="card">
+<p>
+A world filled with laughter,
+beautiful sunsets,
+little adventures,
+warm memories,
+and dreams worth chasing.
+<br><br>
+May life always give you beautiful reasons to dream. ✨
+</p>
+</div>
+</section>
+
+<!-- CHAPTER 14 -->
+
+<section>
+<div class="chapter">CHAPTER 14</div>
+<h2>Forever & Always ❤️</h2>
+<div class="final-heart">💖</div>
+<p>
+Some stories are worth celebrating.
+Some memories are worth keeping.
+And some people deserve the most beautiful wishes.
+</p>
+<p style="margin-top:20px">
+You will always be a special part of this story. 🌹
+</p>
+</section>
+
+<!-- CHAPTER 15 -->
+
+<section>
+<div class="chapter">FINAL CHAPTER</div>
+<div class="small">THE LAST SURPRISE</div>
+<h1 class="glow">Happy Birthday<br>Wifey! 🌹</h1>
+<div class="final-heart">❤️</div>
+<p>
+25 November will always be a beautiful date to celebrate.
+<br><br>
+May your life be filled with love, laughter,
+success and magical moments.
+<br><br>
+<strong>From Your Hubby Kappu 🫀</strong>
+</p>
+<button class="btn" onclick="celebrate()">
+One Last Surprise 🎁
+</button>
+<p id="finalMessage"></p>
 </section>
 
 <footer>
-  Made with ❤️ Just for Lawania
-
-  <br><br>
-
-  Forever a beautiful memory 🌸
+Made with endless love ❤️
+<br><br>
+25 NOVEMBER • FROM YOUR HUBBY KAPPU
 </footer>
 
+<script>
+
+// CHAPTER NAVIGATION
+
+function go(n){
+document.querySelectorAll("section")[n-1].scrollIntoView({
+behavior:"smooth"
+});
+}
+
+// PHOTO VIEWER
+
+function show(img){
+document.getElementById("largeImage").src=img.src;
+document.getElementById("viewer").style.display="flex";
+}
+
+function hide(){
+document.getElementById("viewer").style.display="none";
+}
+
+// FALLING FLOWERS AND HEARTS
+
+const items=["❤️","💕","🌸","✨","💗","🌹","🦋","🎀"];
+
+function falling(){
+const el=document.createElement("div");
+el.className="fall";
+el.textContent=items[Math.floor(Math.random()*items.length)];
+el.style.left=Math.random()*100+"vw";
+el.style.fontSize=(15+Math.random()*25)+"px";
+el.style.animationDuration=(5+Math.random()*6)+"s";
+document.body.appendChild(el);
+setTimeout(()=>el.remove(),11000);
+}
+
+setInterval(falling,350);
+
+// FLOATING HEARTS
+
+function bubbles(){
+const el=document.createElement("div");
+el.className="bubble";
+el.textContent=["💗","💕","✨","🦋"][Math.floor(Math.random()*4)];
+el.style.left=Math.random()*100+"vw";
+el.style.fontSize=(15+Math.random()*20)+"px";
+document.body.appendChild(el);
+setTimeout(()=>el.remove(),7500);
+}
+
+setInterval(bubbles,900);
+
+// SHOOTING STARS
+
+function shooting(){
+const el=document.createElement("div");
+el.className="shooting";
+el.style.top=Math.random()*60+"vh";
+el.style.left=(30+Math.random()*70)+"vw";
+document.body.appendChild(el);
+setTimeout(()=>el.remove(),2100);
+}
+
+setInterval(shooting,3000);
+
+// SCROLL PROGRESS
+
+window.addEventListener("scroll",()=>{
+let total=document.documentElement.scrollHeight-innerHeight;
+let progress=total>0?(scrollY/total)*100:0;
+document.getElementById("progress").style.width=progress+"%";
+});
+
+// FINAL CELEBRATION
+
+function celebrate(){
+for(let i=0;i<65;i++){
+setTimeout(falling,i*35);
+}
+document.getElementById("finalMessage").innerHTML=
+"<br><br>🎆 YOU ARE SPECIAL! 🎆<br><br>Happy Birthday Wifey! ❤️🌹<br><br>From Your Hubby Kappu 🫀";
+}
+
+</script>
+
 </body>
-</html>
+  </html>
+  
